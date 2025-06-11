@@ -1,3 +1,4 @@
+{{ config(materlized='ephemeral')}}
 
 /*
     Welcome to your first dbt model!
