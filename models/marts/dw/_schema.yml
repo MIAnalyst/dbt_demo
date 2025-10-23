@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: revenues
+    config:
+      contract:
+        enforced: true        # <- turn the contract on
+    columns:
+      - name: product
+        data_type: string
+      - name: unitPrice
+        data_type: bigint
+      - name: country
+        data_type: string
+      - name: total_quantity
+        data_type: bigint
+      - name: total_revenue
+        data_type: bigint
