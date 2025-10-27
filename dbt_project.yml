@@ -2,7 +2,7 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'my_new_project'
+name: 'databricks_partner_connect_trial'
 version: '1.0.0'
 config-version: 2
 
@@ -19,10 +19,11 @@ seed-paths: ["seeds"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
 
-target-path: "target"  # directory which will store compiled SQL files
-clean-targets:         # directories to be removed by `dbt clean`
-  - "target"
-  - "dbt_packages"
+
+# target-path: "target"  # directory which will store compiled SQL files
+# clean-targets:         # directories to be removed by `dbt clean`
+#   - "target"
+#   - "dbt_packages"
 
 
 # Configuring models
@@ -35,8 +36,17 @@ clean-targets:         # directories to be removed by `dbt clean`
 # continue to be built as views. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 
+# models:
+#   my_new_project:
+#     # Applies to all files under models/example/
+#     example:
+#       +materialized: table
 models:
-  my_new_project:
-    # Applies to all files under models/example/
-    example:
-      +materialized: table
+  databricks_partner_connect_trial:
+    # staging:
+    #   +schema: staging
+    #   +materialized: view
+    marts:
+      dw:
+        +schema: dw
+        +materialized: table

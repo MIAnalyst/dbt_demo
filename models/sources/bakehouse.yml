@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: bakehouse
+    description: "Read-only bakehouse data in the same catalog"
+    schema: bakehouse
+    tables:
+      - name: sales_transactions
+      - name: sales_franchises
